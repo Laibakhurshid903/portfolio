@@ -1,0 +1,745 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    min-height: 100vh;
+
+    font-family: "Inter", sans-serif;
+
+    color: #ffffff;
+
+    overflow-x: hidden;
+
+    background: #070a16;
+}
+
+
+/* =========================================
+   BACKGROUND
+========================================= */
+
+.background {
+    position: fixed;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    z-index: -1;
+
+    background:
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(105, 76, 255, 0.20),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 85%,
+            rgba(0, 204, 255, 0.16),
+            transparent 30%
+        ),
+        #070a16;
+}
+
+
+.glow {
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(90px);
+
+    opacity: 0.45;
+
+    animation: floating 8s ease-in-out infinite;
+}
+
+
+.glow-one {
+    width: 300px;
+    height: 300px;
+
+    background: #684cff;
+
+    top: -150px;
+    left: -100px;
+}
+
+
+.glow-two {
+    width: 350px;
+    height: 350px;
+
+    background: #009dcc;
+
+    bottom: -180px;
+    right: -100px;
+
+    animation-delay: 2s;
+}
+
+
+.glow-three {
+    width: 180px;
+    height: 180px;
+
+    background: #a855f7;
+
+    top: 45%;
+    left: 48%;
+
+    animation-delay: 4s;
+}
+
+
+@keyframes floating {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-25px);
+    }
+
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.main-container {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 40px 20px;
+}
+
+
+/* =========================================
+   PORTFOLIO CARD
+========================================= */
+
+.portfolio-card {
+
+    width: 100%;
+
+    max-width: 540px;
+
+    padding: 35px;
+
+    border-radius: 32px;
+
+    background: rgba(18, 22, 39, 0.78);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    backdrop-filter: blur(25px);
+
+    -webkit-backdrop-filter: blur(25px);
+
+    box-shadow:
+        0 35px 100px rgba(0, 0, 0, 0.55);
+
+    animation: cardEntry 0.8s ease;
+}
+
+
+@keyframes cardEntry {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================
+   TOP BADGE
+========================================= */
+
+.top-badge {
+
+    width: fit-content;
+
+    margin: 0 auto 28px;
+
+    padding: 8px 14px;
+
+    border-radius: 50px;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    color: #aeb7cd;
+
+    font-size: 11px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.status-dot {
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #39e58c;
+
+    box-shadow:
+        0 0 10px rgba(57, 229, 140, 0.8);
+
+}
+
+
+/* =========================================
+   PROFILE
+========================================= */
+
+.profile-section {
+
+    text-align: center;
+
+    margin-bottom: 32px;
+}
+
+
+.profile-image {
+
+    width: 100px;
+    height: 100px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7657ff,
+            #00c6ff
+        );
+
+    box-shadow:
+        0 12px 35px rgba(96, 76, 255, 0.35);
+
+    border: 4px solid rgba(255, 255, 255, 0.08);
+
+    animation: profileFloat 4s ease-in-out infinite;
+}
+
+
+.profile-image span {
+
+    font-size: 28px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+@keyframes profileFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+
+}
+
+
+.profile-section h1 {
+
+    font-size: 36px;
+
+    font-weight: 800;
+
+    letter-spacing: -1.2px;
+
+    margin-bottom: 7px;
+}
+
+
+.profile-section h1 span {
+
+    background:
+        linear-gradient(
+            90deg,
+            #927cff,
+            #46d8ff
+        );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+.role {
+
+    color: #9fa8c0;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    margin-bottom: 17px;
+}
+
+
+.description {
+
+    max-width: 420px;
+
+    margin: auto;
+
+    color: #aeb6c9;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   LINK CARDS
+========================================= */
+
+.main-links {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+
+.link-card {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 17px;
+
+    text-decoration: none;
+
+    color: white;
+
+    border-radius: 19px;
+
+    background: rgba(255, 255, 255, 0.045);
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border 0.3s ease;
+}
+
+
+.link-card:hover {
+
+    color: white;
+
+    transform: translateY(-4px);
+
+    background: rgba(255, 255, 255, 0.075);
+
+    border-color: rgba(255, 255, 255, 0.18);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================
+   LINK ICON
+========================================= */
+
+.link-icon {
+
+    width: 52px;
+    height: 52px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border-radius: 15px;
+
+    font-size: 22px;
+
+    margin-right: 15px;
+}
+
+
+.cv-icon {
+
+    color: #a894ff;
+
+    background:
+        rgba(124, 92, 255, 0.16);
+}
+
+
+.project-icon {
+
+    color: #42d7ff;
+
+    background:
+        rgba(0, 198, 255, 0.13);
+}
+
+
+/* =========================================
+   LINK CONTENT
+========================================= */
+
+.link-content {
+
+    flex: 1;
+
+    text-align: left;
+}
+
+
+.link-label {
+
+    display: block;
+
+    font-size: 9px;
+
+    letter-spacing: 1.2px;
+
+    color: #777f96;
+
+    margin-bottom: 3px;
+
+    font-weight: 600;
+}
+
+
+.link-content h3 {
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    margin-bottom: 3px;
+}
+
+
+.link-content p {
+
+    margin: 0;
+
+    color: #8e97ad;
+
+    font-size: 11px;
+}
+
+
+/* =========================================
+   ARROW
+========================================= */
+
+.link-arrow {
+
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color: #737c93;
+
+    font-size: 17px;
+
+    transition: 0.3s ease;
+}
+
+
+.link-card:hover .link-arrow {
+
+    color: white;
+
+    transform: translate(3px, -3px);
+}
+
+
+/* =========================================
+   TECHNOLOGIES
+========================================= */
+
+.project-info {
+
+    margin-top: 20px;
+
+    text-align: center;
+}
+
+
+.project-info p {
+
+    margin-bottom: 10px;
+
+    color: #777f95;
+
+    font-size: 10px;
+}
+
+
+.project-info p i {
+
+    color: #9a86ff;
+
+    margin-right: 4px;
+}
+
+
+.tech-list {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+}
+
+
+.tech-list span {
+
+    padding: 6px 10px;
+
+    border-radius: 50px;
+
+    font-size: 9px;
+
+    color: #aeb7cc;
+
+    background: rgba(255, 255, 255, 0.045);
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+.divider {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 28px 0 18px;
+}
+
+
+.divider span {
+
+    height: 1px;
+
+    flex: 1;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+}
+
+
+.divider p {
+
+    margin: 0;
+
+    white-space: nowrap;
+
+    color: #6f778c;
+
+    font-size: 10px;
+}
+
+
+/* =========================================
+   SOCIAL
+========================================= */
+
+.social-links {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+}
+
+
+.social-links a {
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border-radius: 50%;
+
+    color: #a9b1c4;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    text-decoration: none;
+
+    transition: 0.3s ease;
+}
+
+
+.social-links a:hover {
+
+    color: white;
+
+    transform: translateY(-4px);
+
+    background: rgba(255, 255, 255, 0.1);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+
+    text-align: center;
+
+    margin-top: 22px;
+}
+
+
+footer p {
+
+    margin: 0;
+
+    color: #555d72;
+
+    font-size: 9px;
+}
+
+
+footer strong {
+
+    color: #777f96;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 576px) {
+
+    .main-container {
+
+        padding: 20px 14px;
+    }
+
+
+    .portfolio-card {
+
+        padding: 28px 20px;
+
+        border-radius: 27px;
+    }
+
+
+    .profile-section h1 {
+
+        font-size: 29px;
+    }
+
+
+    .profile-image {
+
+        width: 88px;
+        height: 88px;
+    }
+
+
+    .description {
+
+        font-size: 12px;
+    }
+
+
+    .link-card {
+
+        padding: 14px;
+    }
+
+
+    .link-icon {
+
+        width: 47px;
+        height: 47px;
+
+        margin-right: 12px;
+    }
+
+}
